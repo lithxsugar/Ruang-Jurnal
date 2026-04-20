@@ -12,7 +12,7 @@ export default defineConfig(({mode}) => {
       tailwindcss(),
       VitePWA({
         registerType: 'prompt',
-        includeAssets: ['icon.svg'],
+        includeAssets: ['icon.svg', 'pwa-192x192.png', 'pwa-512x512.png'],
         manifest: {
           name: "Ruang Jurnal",
           short_name: "Ruang Jurnal",
@@ -20,11 +20,23 @@ export default defineConfig(({mode}) => {
           theme_color: "#87ceeb",
           background_color: "#e8f4fd",
           display: "standalone",
+          start_url: ".",
           icons: [
             {
               src: 'icon.svg',
               sizes: 'any',
               type: 'image/svg+xml'
+            },
+            {
+              src: 'pwa-192x192.png',
+              sizes: '192x192',
+              type: 'image/png'
+            },
+            {
+              src: 'pwa-512x512.png',
+              sizes: '512x512',
+              type: 'image/png',
+              purpose: 'any maskable'
             }
           ]
         },
